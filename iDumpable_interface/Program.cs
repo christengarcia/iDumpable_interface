@@ -39,4 +39,27 @@ namespace iDumpable_interface
             Console.WriteLine("Fraction : " + z + "/" + n);
         }
     }
+
+    class Person : IDumpable
+    {
+        string name;
+        public string address;
+        public int phone;
+
+        public Person(string name, string address, int phone)
+        {
+            this.name = name; this.address = address; this.phone = phone;
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public void Dump()
+        {
+            Console.WriteLine("Person Details : {0}, {1}, {2}", name, address, phone);
+        }
+    }
 }
