@@ -62,4 +62,26 @@ namespace iDumpable_interface
             Console.WriteLine("Person Details : {0}, {1}, {2}", name, address, phone);
         }
     }
+
+    class Test
+    {
+        static void Main(string[] arg)
+        {
+            IDumpable[] a =
+            {
+            new Fraction(10,3),
+            new Fraction(9,4),
+            new Person("Tom", "INDIA", 99556677),
+            new Person("Jerry", "INDIA", 998979899),
+        };
+            a[0].Name = "f1";
+            a[1].Name = "f2";
+            foreach (IDumpable obj in a)
+            {
+                Console.Write(obj.Name + ": ");
+                obj.Dump();
+            }
+            Console.ReadLine();
+        }
+    }
 }
